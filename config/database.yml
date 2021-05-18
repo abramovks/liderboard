@@ -24,5 +24,4 @@ production:
   adapter: postgresql
   database: liderboard
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-  database: db/production.sqlite3
+  timeout: 5000 
