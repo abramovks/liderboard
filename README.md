@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello
 
-Things you may want to cover:
+You need to create key for every you app. 
 
-* Ruby version
+POST /api/v1/create_key
 
-* System dependencies
+{
 
-* Configuration
+    "id": 7,
 
-* Database creation
+    "key": "ZRvxqnNfSjUnLcPeMejXpmCWZTefjQLCBDFPGLujUauWUeLYON",
 
-* Database initialization
+    "created_at": "2021-05-18T06:48:36.384Z",
 
-* How to run the test suite
+    "updated_at": "2021-05-18T06:48:36.384Z"
 
-* Services (job queues, cache servers, search engines, etc.)
+}
 
-* Deployment instructions
-
-* ...
