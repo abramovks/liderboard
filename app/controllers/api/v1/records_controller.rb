@@ -6,8 +6,9 @@ module Api
             def index
                 records = @key.records.order("score desc, updated_at desc")
                 user_score = records.where(user_name: params[:user_name])[0].score rescue 0
-                records = records.map{|r| {score: r.score, user_name: r.user_name} }.uniq! {|e| e[:score] }
-                
+                puts records
+                records = records.map{|r| {score: r.score, user_name: r.user_name} }.uniq {|e| e[:score] }
+                 
                 user_position = records.index {|h| h[:score] == user_score } || -1
                 
                 if params[:limit] && params[:limit].to_i>0
