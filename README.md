@@ -2,6 +2,14 @@
 
 Hello. It is simple Liderboard store application.
 
+Run
+
+rails db:create
+
+rails db:migrate
+
+rails s
+
 You need to create key for every you app. 
 GET /api/v1/create_key
 {
