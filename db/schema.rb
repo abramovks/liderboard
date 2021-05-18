@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_053913) do
+ActiveRecord::Schema.define(version: 2021_05_18_055153) do
 
   create_table "keys", force: :cascade do |t|
     t.string "key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "key_id"
+    t.string "user_name"
+    t.float "score", default: 0.0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["key_id"], name: "index_records_on_key_id"
   end
 
 end
