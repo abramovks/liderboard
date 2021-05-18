@@ -16,7 +16,7 @@ module Api
 
                 user_position_in_records = records.index {|h| h[:score] == user_score }
                 if user_position_in_records
-                  records[user_position_in_records][:user_name] = "YOU (#{params[:user_name]})"
+                  records[user_position_in_records][:user_name] += " (YOU)"
                 end
 
                 if params[:format] == "text"
