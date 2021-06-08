@@ -7,6 +7,8 @@ module Api
                 records = @key.records.order("score desc, updated_at desc")
                 user_score = records.where(user_name: params[:user_name])[0].score rescue 0 
                 
+                global_user_position = records.index {|h| h[:user_name] == params[:user_name] } || -1
+
                 records = records.map{|r| {score: r.score, user_name: r.user_name} }.uniq {|e| e[:score] }
                  
                 user_position = records.index {|h| h[:score] == user_score } || -1
@@ -28,6 +30,7 @@ module Api
                 render json: {
                   score: user_score,
                   position: user_position+1,
+                  global_position: global_user_position+1,
                   records: records
                 }
 
